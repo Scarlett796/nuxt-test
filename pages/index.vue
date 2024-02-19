@@ -2,26 +2,27 @@
   <div class="container">
     <div>
       <NuxtLogo />
+      <NuxtTutorial />
       <h1 class="title">Welcome to the Vant + Nuxt.js template</h1>
       <div class="links">
-        <van-button type="primary" url="https://nuxtjs.org/">
-          Documentation
-        </van-button>
-        <van-button url="https://github.com/nuxt/nuxt.js"> GitHub </van-button>
-        <van-button url="https://vant-contrib.gitee.io/vant">
-          Vant UI
-        </van-button>
+        <van-button> Documentation </van-button>
+        <van-button> GitHub </van-button>
+        <van-button> Vant UI </van-button>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+import NuxtTutorial from '~/components/Tutorial.vue'
+export default defineComponent({
   name: 'IndexPage',
-}
+  components: {
+    NuxtTutorial,
+  },
+})
 </script>
-
 <style lang="less" scoped>
 .container {
   margin: 0 auto;
@@ -40,14 +41,6 @@ export default {
   font-size: 100px;
   color: #35495e;
   letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
 }
 
 .links {
